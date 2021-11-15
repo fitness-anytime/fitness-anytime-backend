@@ -1,0 +1,41 @@
+{
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "knex": "^0.95.14",
+    "node": "^17.1.0",
+    "sqlite3": "^5.0.2"
+  },
+  "name": "fitness-anytime-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "serever": "nodemon index.js",
+    "up": "knex migrate:up",
+    "down": "knex migrate:down",
+    "migrate": "knex migrate:latest",
+    "rollback": "knex migrate:rollback",
+    "cleanup": "knex seed:run --specific=00-cleanup.js",
+    "reset": "npm run rollback && npm run migrate && npm run seed",
+    "seed": "knex seed run",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fitness-anytime/fitness-anytime-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fitness-anytime/fitness-anytime-backend/issues"
+  },
+  "homepage": "https://github.com/fitness-anytime/fitness-anytime-backend#readme",
+  "description": "",
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "knex-cleaner": "^1.3.1",
+    "nodemon": "^2.0.15"
+  }
+}
